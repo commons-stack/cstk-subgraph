@@ -1,6 +1,7 @@
 # CSTK Subgraph
 
-- [Subgraph Endpoint](https://api.thegraph.com/subgraphs/name/mendesfabio/commons-stack-membership)
+- [Subgraph](https://thegraph.com/hosted-service/subgraph/commons-stack/commons-stack-membership)
+- [Endpoint](https://api.thegraph.com/subgraphs/name/commons-stack/commons-stack-membership)
 
 ## CSTK Information
 

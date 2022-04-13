@@ -4,6 +4,7 @@ type Token @entity {
   symbol: String!
   numMembers: BigInt!
   totalSupply: BigDecimal!
+  snapshots: [TokenSnapshot!] @derivedFrom(field: "token")
 }
 
 type TokenSnapshot @entity {
@@ -19,6 +20,7 @@ type Member @entity {
   startDate: Int
   expireDate: Int
   balance: BigDecimal!
+  snapshots: [MemberSnapshot!] @derivedFrom(field: "member")
 }
 
 type MemberSnapshot @entity {

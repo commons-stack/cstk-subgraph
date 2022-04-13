@@ -1,4 +1,6 @@
 specVersion: 0.0.4
+description: CSTK Subgraph for Trusted Seed Dashboard
+repository: https://github.com/commons-stack/cstk-subgraph
 schema:
   file: ./schema.graphql
 dataSources:

@@ -1,0 +1,45 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - name: CSTK
+    kind: ethereum/contract
+    network: xdai
+    source:
+      abi: CSTK
+      startBlock: 11452339
+      address: "0xc4fbE68522ba81a28879763C3eE33e08b13c499E"
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/index.ts
+      entities:
+        - CSTK
+        - Member
+      abis:
+        - name: CSTK
+          file: ./abis/CSTK.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+  - name: Minter
+    kind: ethereum/contract
+    network: xdai
+    source:
+      abi: Minter
+      startBlock: 21513764
+      address: "0xA31eA20253e40eFF625aB3f14357290040A06a21"
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/index.ts
+      entities:
+        - Member
+      abis:
+        - name: Minter
+          file: ./abis/Minter.json
+      eventHandlers:
+        - event: Mint(indexed address,uint256)
+          handler: handleMint

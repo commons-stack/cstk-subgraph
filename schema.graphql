@@ -1,0 +1,29 @@
+type Token @entity {
+  id: Bytes!
+  name: String!
+  symbol: String!
+  numMembers: BigInt!
+  totalSupply: BigDecimal!
+}
+
+type TokenSnapshot @entity {
+  id: Bytes!
+  token: Token!
+  timestamp: Int!
+  numMembers: BigInt!
+  totalSupply: BigDecimal!
+}
+
+type Member @entity {
+  id: Bytes!
+  startDate: Int
+  expireDate: Int
+  balance: BigDecimal!
+}
+
+type MemberSnapshot @entity {
+  id: Bytes!
+  member: Member!
+  timestamp: Int!
+  balance: BigDecimal!
+}

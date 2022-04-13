@@ -1,0 +1,542 @@
+[
+    {
+      "type": "constructor",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address[]",
+          "name": "authorizedKeys",
+          "internalType": "address[]"
+        },
+        {
+          "type": "address",
+          "name": "dao",
+          "internalType": "address"
+        },
+        {
+          "type": "address",
+          "name": "registry",
+          "internalType": "address"
+        },
+        {
+          "type": "address",
+          "name": "cstkToken",
+          "internalType": "address"
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "name": "AdminAdded",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account",
+          "internalType": "address",
+          "indexed": true
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "AdminRemoved",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account",
+          "internalType": "address",
+          "indexed": true
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "CSTKTokenContractChanged",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "cstkTokenContract",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "admin",
+          "internalType": "address",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "CollectorChanged",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "collector",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "admin",
+          "internalType": "address",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "DAOContractChanged",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "daoContract",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "admin",
+          "internalType": "address",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "Mint",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "recipient",
+          "internalType": "address",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "OwnershipTransferred",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "previousOwner",
+          "internalType": "address",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "newOwner",
+          "internalType": "address",
+          "indexed": true
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "PaymentReceived",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "sender",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "RatioChanged",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "nominator",
+          "internalType": "uint256",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "denominator",
+          "internalType": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "RegistryContractChanged",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "registryContract",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "admin",
+          "internalType": "address",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "addAdmin",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account",
+          "internalType": "address"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "changeCSTKTokenContract",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "cstkToken",
+          "internalType": "address"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "changeCollector",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "collector",
+          "internalType": "address payable"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "changeDAOContract",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "dao",
+          "internalType": "address"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "changeRegistry",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "registry",
+          "internalType": "address"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "name": "collector",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "name": "cstkToken",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "name": "dao",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "denominator",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "bool",
+          "name": "",
+          "internalType": "bool"
+        }
+      ],
+      "name": "isAdmin",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account",
+          "internalType": "address"
+        }
+      ],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "bool",
+          "name": "",
+          "internalType": "bool"
+        }
+      ],
+      "name": "isOwner",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "mint",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "recipient",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "toMint",
+          "internalType": "uint256"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "numerator",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "name": "owner",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "payable",
+      "payable": true,
+      "outputs": [],
+      "name": "pay",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "beneficiary",
+          "internalType": "address"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "ratio",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "payable": false,
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "name": "registry",
+      "inputs": [],
+      "constant": true
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "removeAdmin",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account",
+          "internalType": "address"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "renounceAdmin",
+      "inputs": [],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "renounceOwnership",
+      "inputs": [],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "setRatio",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "numerator",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "denominator",
+          "internalType": "uint256"
+        }
+      ],
+      "constant": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "payable": false,
+      "outputs": [],
+      "name": "transferOwnership",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "newOwner",
+          "internalType": "address"
+        }
+      ],
+      "constant": false
+    }
+  ]
+  
